@@ -2,15 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<style>
-	
+
 	</style>
 
 
 <title>Sales System: Stock</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
 <body>
-	
+
 	<ul>
 		<li><a href="/home">Home</a></li>
 		<li><a href="/newPerson">Create Person</a></li>
@@ -19,13 +20,26 @@
 		<li><a href="/listPeople">List People</a></li>
 	</ul>
 
-
-
-	<form th:action="@{/newKnowledge}" method= "post">
-		<div><label>Conhecimento:<input type="text" name="knowledge"/></label></div>
-		<br/>
-		<form:options items="${enumValues}" />
-		<div><input type="submit" value="Enviar"/></div>
-	</form>
+	<table>
+	<thead>
+		<tr>
+			<h2>Conhecimentos</h2>
+			<th></th>
+			<th th:text="Nome">nomeCalibre</th>
+			<th th:text="Conhecimento">nomeArma</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr th:each="per: ${person}">
+			<td th:text="${per.person.nome}"></td>
+			<td th:text="${per.knowledge}"></td>
+			<td th:text="${per.level}"></td>
+		</tr>
+	</tbody>
+	</table>
+	<a href="/menu"> <input type="button" value="Voltar"
+		class="btn btn-success" style="margin-top: 15px"></input>
+	</a>
 </body>
 </html>
