@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<style>
+	
+	</style>
+
+
+<title>Sales System: Stock</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+	<ul>
+		<li><a href="/home">Home</a></li>
+		<li><a href="/newPerson">Create Person</a></li>
+		<li><a href="/newKnowledge">Criar Conhecimento</a></li>
+		<li><a href="/addKnowledgePerson">Adicionar Conhecimento</a></li>
+		<li><a href="/listPersonKnowledges">Lista de Conhecimentos</a></li>
+	</ul>
+
+
+
+	<form th:action="@{/newKnowledge}" method= "post">
+		<div><label>Conhecimento:<input type="text" name="knowledge"/></label></div>
+		<br/>
+		<form:options items="${enumValues}" />
+		<div><input type="submit" value="Enviar"/></div>
+	</form>
+</body>
+</html>
